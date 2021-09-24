@@ -1,0 +1,34 @@
+
+<div class = container-pos>
+  <div id = header>
+    <h2> Travel Blog </h2>
+    <p> This blog is your guide on the cool places that exist in the world </p>
+  </div>
+
+
+<div class = viewall>
+
+
+
+                       
+                        
+
+      
+<div class = t-pos>
+  <table class="table table-dark table-striped table-hover ">
+
+    <tr>                          
+      <th>Title</th>
+      <th>Author</th>
+    </tr>
+    <% @posts.each do |p| %>     
+    <tr class = data>
+      <td id ="title"><%= p.title %></td>  
+      <td id ="author"><%= p.author %></td>  
+    </tr>
+    <% end %>  
+    
+  </table>
+</div>
+
+</div>
