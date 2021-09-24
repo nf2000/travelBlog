@@ -1,25 +1,34 @@
 
-<div class = header>
-<h3> Travel Blog </h2>
-<p> This blog is your guide on the cool places that exist in the world </p>
-</div>
+<div class = container-pos>
+  <div id = header>
+    <h2> Travel Blog </h2>
+    <p> This blog is your guide on the cool places that exist in the world </p>
+  </div>
+
 
 <div class = viewall>
-<% @posts.each do |p| %>
-  <div class="post">
-    <div class="row">
-      <div class="col-md-9">
 
-      <div class ="title">
-        <p class= "title-label"> Title: </p> 
 
-        </div>
-        <div class ="title">
-        <p id ="title"> <%= p.title%> </p>
-      </div>
 
-      </div>
-    </div>
-  </div>
-<% end %>
+                       
+                        
+
+      
+<div class = t-pos>
+  <table class="table table-dark table-striped table-hover ">
+
+    <tr>                          
+      <th>Title</th>
+      <th>Author</th>
+    </tr>
+    <% @posts.each do |p| %>     
+    <tr class = data>
+      <td id ="title"><%= p.title %></td>  
+      <td id ="author"><%= p.author %></td>  
+    </tr>
+    <% end %>  
+    
+  </table>
+</div>
+
 </div>
