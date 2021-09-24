@@ -1,0 +1,14 @@
+
+
+
+.title {
+    float: left;
+    width: 10%;
+  }
+
+.header h1 {
+    font-family: 'Domine', serif;
+  }
+  body {
+    background-color: black;
+    color: white;}
