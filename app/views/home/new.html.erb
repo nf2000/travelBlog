@@ -1,0 +1,28 @@
+<div class="header">
+  <div class="container">
+    <h1>Creat a post</h1>
+  </div>
+</div>
+
+<div class="create">
+  <div class="container">
+   	<%= form_for :post do |p| %>  
+        <div class="field"> 
+            <%= p.label :title %>
+            <%= p.text_field :title %> <br>
+            <%= p.label :author %>
+            <%= p.text_field :author %> <br>
+            <%= p.label :category %>
+            <%= p.text_field :category %> <br>
+            <%= p.label :content %>
+            <%= p.text_area :content %> <br>  
+        </div> 
+  <div class="actions"> 
+    <%= p.submit "Create" %> 
+  </div> 
+    <% end %> 
+</div>
+    		
+
+
+     
