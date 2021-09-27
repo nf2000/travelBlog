@@ -1,24 +1,24 @@
 <div class="header">
   <div class="container">
-    <h1>Creat a post</h1>
+    <h1>Create a post</h1>
   </div>
 </div>
 
 <div class="create">
   <div class="container">
-   	<%= form_for :post do |p| %>  
+   	<%= form_for @post, url: {action: "create"} do |form| %>  
         <div class="field"> 
-            <%= p.label :title %>
-            <%= p.text_field :title %> <br>
-            <%= p.label :author %>
-            <%= p.text_field :author %> <br>
-            <%= p.label :category %>
-            <%= p.text_field :category %> <br>
-            <%= p.label :content %>
-            <%= p.text_area :content %> <br>  
+            <%= form.label :title %>
+            <%= form.text_field :title %> <br>
+            <%= form.label :author %>
+            <%= form.text_field :author %> <br>
+            <%= form.label :category %>
+            <%= form.text_field :category %> <br>
+            <%= form.label :content %>
+            <%= form.text_area :content %> <br>  
         </div> 
   <div class="actions"> 
-    <%= p.submit "Create" %> 
+    <%= form.submit "Create" %> 
   </div> 
     <% end %> 
 </div>
