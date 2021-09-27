@@ -1,26 +1,37 @@
 <div class="header">
   <div class="container">
-    <h1>Create a post</h1>
+    <h1 class="text-center">Create a post</h1>
   </div>
 </div>
 
 <div class="create">
-  <div class="container">
-   	<%= form_for @post, url: {action: "create"} do |form| %>  
-        <div class="field"> 
-            <%= form.label :title %>
-            <%= form.text_field :title %> <br>
-            <%= form.label :author %>
-            <%= form.text_field :author %> <br>
-            <%= form.label :category %>
-            <%= form.text_field :category %> <br>
-            <%= form.label :content %>
-            <%= form.text_area :content %> <br>  
-        </div> 
-  <div class="actions"> 
-    <%= form.submit "Create" %> 
-  </div> 
-    <% end %> 
+    <div class="container">
+        <%= form_for @post, url: {action: "create"} do |form| %>     
+            <div class="row">
+                <div class="col-sm-3">
+                    <%= form.label :title %>
+                    <%= form.text_field :title , class: "form-control form-control-sm"%> <br>
+                </div>
+                <div class="col-sm-3">
+                    <%= form.label :author %>
+                    <%= form.text_field :author , class: "form-control form-control-sm" %> <br>  
+                </div>
+                <div class="col-sm-3">
+                    <%= form.label :category %>
+                    <%= form.text_field :category , class: "form-control form-control-sm" %> <br>
+                </div>
+            </div>
+    
+            <div class="col-sm-9">
+                <%= form.label :content %>
+                <%= form.text_area :content, class: "form-control form-control-sm", rows: "6" %> <br> 
+            </div> 
+        
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                <%= form.submit "Create", class: " btn btn-primary me-md-5 btn btn-primary btn-sm" %>
+            </div>
+        <% end %> 
+    </div>
 </div>
     		
 
