@@ -6,7 +6,7 @@ class HomeController < ApplicationController
     end
 
     def show
-        @post = Post.find(params[:id])
+        @blog = Post.find(params[:id])
 
 
     end 

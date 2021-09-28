@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   root 'home#index'
   get 'post' => 'home#new'
   post "post" => "home#create"
-  get '/home/:id' => 'home#show', as: :blog
+  get '/home/:id', to: 'home#show', as: 'blog'
+
  
 end
