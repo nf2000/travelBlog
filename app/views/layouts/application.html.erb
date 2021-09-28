@@ -5,12 +5,14 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <link rel="stylesheet" href="http://content.codecademy.com/projects/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
     <link href='http://fonts.googleapis.com/css?family=Merriweather:300italic,300' rel='stylesheet' type='text/css'>
 
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_link_tag 'index', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'new', media: 'all', 'data-turbolinks-track': 'reload' %>
+
 
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
 
@@ -21,8 +23,8 @@
   
     <ul>
       <li> <%= link_to "Home", "/home" %> </li>
-      <li><%= link_to "Create a Post", "/home/create" %> </li>
-    </ul>
+      <li><%= link_to "Create a Post", "/home/new" %> </li>
+    </ul> <br>
     
   <%=yield%>
   </body>
