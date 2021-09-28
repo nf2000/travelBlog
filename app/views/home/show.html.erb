@@ -3,7 +3,13 @@
     
     <div class="specfic-post">
       <div class="info">
-        <h3 class="title"><%= @blog.title %>  </h3>
+        <h2 class="display-3"><%= @post.title %> </h2> <br>
+        <p class="lead"> by <%= @post.author %>  </p>
+        <p class="category"> Category: <%= @post.category %>  <p>
+        <p class="content"><%= @post.content %>  </p>
+        <p class="posted-at"><em>Created at: <%= @post.created_at %>  </em></p>
+        
+
       </div>
     </div>
 
@@ -13,7 +19,7 @@
 </div>
 
 
-
-
     
+
+
 
