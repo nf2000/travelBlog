@@ -8,14 +8,12 @@ class HomeController < ApplicationController
     def show
         @post = Post.find(params[:id])
 
-
     end 
 
     def destroy
         @post = Post.find(params[:id])
         @post.destroy
         redirect_to root_path
-        
     end
 
     def new
@@ -30,9 +28,7 @@ class HomeController < ApplicationController
            return redirect_to '/home' 
         else
             render 'new'
-        end
-            
-            
+        end     
     end
 
   
