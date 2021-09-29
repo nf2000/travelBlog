@@ -8,7 +8,7 @@
         <p class="category"> Category: <%= @post.category %>  <p>
         <p class="content"><%= @post.content %> </p>
         <p class="posted-at"><em>Created at: <%= @post.created_at %></em></p>
-        <%= link_to "delete", @Post, :method => :delete %>
+        <%= link_to "delete", @Post, :method => :delete , data:{:confirm => 'Are you sure you wish to delete this blog?'} %>
 
       </div>
     </div>
