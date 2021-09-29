@@ -1,0 +1,12 @@
+.lead{
+    font-style: oblique;
+}
+.content{
+    text-align: left;
+    position: absolute;
+    top: 65%;
+    left: 16%;
+    right: 20%;
+    padding-bottom: 10%;
+}
+
