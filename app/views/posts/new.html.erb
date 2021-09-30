@@ -1,0 +1,40 @@
+<div class="header">
+  <div class="container">
+    <h2 >Create a post</h2>
+    <p> You can create a cool blog post here </p>
+  </div>
+</div>
+
+<div class="create">
+    <div class="container">
+        <%= form_for @post, url: {action: "create"} do |form| %>     
+            <div class="row">
+                <div class="col-sm-3">
+                    <%= form.label :title %>
+                    <%= form.text_field :title , class: "form-control form-control-sm", :required => true%> <br>
+                </div>
+                <div class="col-sm-3">
+                    <%= form.label :author %>
+                    <%= form.text_field :author , class: "form-control form-control-sm", :required => true %> <br>  
+                </div>
+                <div class="col-sm-3">
+                    <%= form.label :category %>
+                    <%= form.text_field :category , class: "form-control form-control-sm" , :required => true%> <br>
+                </div>
+            </div>
+    
+            <div class="col-sm-9">
+                <%= form.label :content %>
+                <%= form.text_area :content, class: "form-control form-control-sm", rows: "6", :required => true %> <br> 
+            </div> 
+        
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                <%= form.submit "Create", class: " btn btn-primary me-md-5 btn btn-primary btn-sm" %>
+            </div>
+        <% end %> 
+    </div>
+</div>
+    		
+
+
+     
