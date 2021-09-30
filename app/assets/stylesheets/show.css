@@ -1,5 +1,8 @@
 .lead{
     font-style: oblique;
+    position: relative;
+    left: 12%;
+    
 }
 .content{
     text-align: left;
@@ -9,12 +12,18 @@
     right: 20%;
     padding-bottom: 10%;
 }
+
 .btn {
 
     position: absolute;
     top: 30%;
     right: 10%; 
-          
+}
+
+.list-inline-item{
+    position: relative;
+    left: 9%;
 
 }
+
 
