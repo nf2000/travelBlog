@@ -30,7 +30,7 @@ class PostsController < ApplicationController
         post_is_valid = post.valid? #checking if the post fields are filled in 
         if post_is_valid  
             post.save # saves the parameters inside the database
-           return redirect_to posts_path() 
+           return redirect_to posts_path
         else
             render 'new'
         end  
