@@ -13,7 +13,7 @@ class PostsController < ApplicationController
     def destroy
         @post = Post.find(params[:id])
             if @post.destroy
-                flash[:notice] =  "'"+ @post.title + "'" +" successfully deleted."  
+                flash[:notice] =  "'#{@post.title}' successfully deleted."  
                 redirect_to root_path
             else
                 flash.now[:alert] = "could not delete blog post"
