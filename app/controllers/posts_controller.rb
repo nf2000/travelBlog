@@ -13,7 +13,7 @@ class PostsController < ApplicationController
     def destroy
         @post = Post.find(params[:id])
             if @post.destroy
-                flash[:notice] =  "'"+ @post.title + "'" +" successfully deleted."  
+                flash[:notice] =  "'#{@post.title}' successfully deleted."  
                 redirect_to root_path
             else
                 flash.now[:alert] = "could not delete blog post"
@@ -30,7 +30,7 @@ class PostsController < ApplicationController
         post_is_valid = post.valid? #checking if the post fields are filled in 
         if post_is_valid  
             post.save # saves the parameters inside the database
-           return redirect_to '/posts' 
+           return redirect_to posts_path() 
         else
             render 'new'
         end  
