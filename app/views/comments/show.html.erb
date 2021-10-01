@@ -1,0 +1,28 @@
+
+<div class = container-pos>
+<div id = header>
+  <h2 class="text-right" > comments </h2>
+</div>
+
+
+<div class = "viewall">
+    
+<div class = "t-pos">
+  <table class="table table-dark table-striped table-hover ">
+
+    <tr>                          
+      <th>Title</th>
+      <th>Author</th>
+      <th> </th>
+    </tr>
+    <% @comments.each do |comment| %>     
+    <tr class = data>
+      <td ><%= comment.comment %></td>  
+
+    </tr>
+    <% end %>  
+    
+  </table>
+</div>
+
+</div>
