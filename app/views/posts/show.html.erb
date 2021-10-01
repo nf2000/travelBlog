@@ -14,22 +14,31 @@
       </div>
       <div class="btn1">
         <%= button_to "Delete", { action: "destroy" }, method: :delete, data:{confirm: 'Are you sure you wish to delete this blog?'}, class: 'btn btn-primary me-md-5 btn btn-primary btn-sm '  %>
-
-        </div>
-        <div class="edit-btn">
+      </div>
+      <div class="edit-btn">
 
         <li><%= link_to "Edit ", edit_post_path(@post), class: ' btn btn-primary me-md-5 btn btn-primary btn-sm '%></li>
 
-        </div>
-
-        <li><%= link_to "Comment ", comment_path, class: ' btn btn-primary me-md-5 btn btn-primary btn-sm '%></li>
-
       </div>
 
-
-
-
+        
+      <div class = "comments">
+        <div class="row">
+          <div class="col-sm-10"></div>
+      
+             <% @comments.each do |comment| %>     
+             <p ><%= comment.comment %></p> 
+             <div class="col-6 col-md-4"><p> <%= comment.created_at%></p></div> 
+            <% end %>  
+            <li><%= link_to "Add Comment ", comment_path, class: ' btn btn-primary me-md-5 btn btn-primary btn-sm '%></li>
+          </div>
+        </div>
+      </div>
+  </div>
 </div>
+
+
+
 
 
     
