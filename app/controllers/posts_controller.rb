@@ -45,9 +45,11 @@ class PostsController < ApplicationController
         @post = Post.find(params[:id])
     
         if @post.update(post_param)
-          redirect_to root_path
+            flash[:notice] =  "'#{@post.title}' successfully updated."  
+            redirect_to root_path
         else
-          render 'edit'
+            flash.now[:alert] = "unable to update blog"
+            render 'edit'
         end
       end
 
