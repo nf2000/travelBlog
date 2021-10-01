@@ -23,10 +23,24 @@
   <body>
   
     <ul>
-      <li> <%= link_to "Home", "/home" %> </li>
-      <li><%= link_to "Create a Post", "/home/new" %> </li>
+      <li> <%= link_to "Home", posts_path %> </li>
+      <li><%= link_to "Create a Post", new_post_path %> </li>
     </ul> <br>
-    
+
+  <div>
+    <nav class="navbar fixed-bottom navbar-light bg-dark">
+    <nav class = "navbar-brand"> <%=  image_tag "instagram.png", width: 35, height: 35 %> </nav>
+    <nav class = "navbar-brand"> <%=  image_tag "twitter.png", width: 35, height: 35 %> </nav>
+
+
+  </div>
+  
+    <% flash.each do |type, msg| %>
+      <div class="alert alert-info">
+        <%= msg %>
+      </div>
+
+    <% end %>
   <%=yield%>
   </body>
 </html>

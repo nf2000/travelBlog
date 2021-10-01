@@ -1,4 +1,4 @@
-class HomeController < ApplicationController
+class PostsController < ApplicationController
 
     def index
        
@@ -8,8 +8,18 @@ class HomeController < ApplicationController
     def show
         @post = Post.find(params[:id])
 
-
     end 
+
+    def destroy
+        @post = Post.find(params[:id])
+            if @post.destroy
+                flash[:notice] =  "'#{@post.title}' successfully deleted."  
+                redirect_to root_path
+            else
+                flash.now[:alert] = "could not delete blog post"
+                render 'show'
+            end
+    end
 
     def new
         @post = Post.new
@@ -20,12 +30,11 @@ class HomeController < ApplicationController
         post_is_valid = post.valid? #checking if the post fields are filled in 
         if post_is_valid  
             post.save # saves the parameters inside the database
-           return redirect_to '/home' 
+           return redirect_to posts_path
         else
             render 'new'
-        end
-            
-            
+        end  
+       
     end
 
   
