@@ -32,5 +32,15 @@
     left: 9%;
 
 }
+.comments{
+    margin-bottom: 20%;
+    position: absolute;
+    bottom: -80%;
+    margin-top: -10px ;
+    padding-bottom: 100px;
+    padding-top: -10px;
+    
+
+}
 
 
