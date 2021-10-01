@@ -10,5 +10,6 @@ p2 = Post.create(title: "Budget Travel", author: "Emma Jones", category: "Finana
 p3 = Post.create(title: "Travelling Europe", author: "Jack Jones", category: "Travel", content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.")
 
 c1 = Comment.create(comment: "This blog was very helpful, thank you!", post_id: 1)
-
+c2 = Comment.create(comment: "Very insightful", post_id: 1)
+c3 = Comment.create(comment: " insightful", post_id: 2)
 
