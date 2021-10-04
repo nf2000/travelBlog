@@ -1,15 +1,22 @@
 class CommentsController < ApplicationController
 
-    def new
-        @comment =  Comment.new
+    def index
+        @comments = Comment.all
     end
+
+    def new
+
+        @comment = Comment.new
+
+    end
+
   
     def create
-        @comment = Comment.new(comment_param)  
-        post_is_valid = post.valid? 
-        if post_is_valid  
-            post.save
-           return redirect_to posts_path
+        comment = @post.Comment.new(comment_param)  
+        comment_is_valid = comment.valid? 
+        if comment_is_valid  
+            comment.save
+           return redirect_to posts_path(params[:post_id])
 
         else
             flash.now[:alert] = "Unable to create a comment"
@@ -20,6 +27,6 @@ class CommentsController < ApplicationController
 
     private
     def comment_param
-    params.require(:comment).permit(:comment)
+    params.require(:comment).permit(:comment).merge(post_id: params[:post_id])
     end
 end
