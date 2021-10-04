@@ -13,8 +13,9 @@ class CommentsController < ApplicationController
   
     def create
         @comment = Comment.new(comment_param)  
-        #comment_is_valid = comment.valid? 
-        if @comment.save
+        comment_is_valid = comment.valid? 
+        if comment_is_valid
+            @comment.save
             return redirect_to root_path
 
         else
