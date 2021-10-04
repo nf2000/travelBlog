@@ -18,7 +18,8 @@
     
         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
             <%= form.submit "Submit Comment", class: " btn btn-primary me-md-5 btn btn-primary btn-sm" %>
-        </div>
+            <%= form.hidden_field :post_id, value: "#{params[:post_id]}" %>
+            </div>
     <% end %> 
 </div>
 </div>
