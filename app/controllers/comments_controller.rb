@@ -20,9 +20,9 @@ class CommentsController < ApplicationController
             return redirect_to post_path("#{comment_param[:post_id]}")
 
         else
-            flash.now[:error] = comment.errors.full_messages
-            render 'new'
+            flash.now[:alert] = "Comment can not be made"
 
+            render 'new'
 
         end  
        
@@ -30,6 +30,6 @@ class CommentsController < ApplicationController
 
     private
     def comment_param
-    params.require(:comment).permit(:comment,:post_id)#.merge(post_id: params[:post_id])
+    params.require(:comment).permit(:comment,:post_id)
     end
 end
