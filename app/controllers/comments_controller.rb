@@ -12,14 +12,15 @@ class CommentsController < ApplicationController
 
   
     def create
-        @comment = Comment.new(comment_param)  
+        comment = Comment.new(comment_param)  
         comment_is_valid = comment.valid? 
         if comment_is_valid
-            @comment.save
-            return redirect_to root_path
+            comment.save
+            flash[:notice] =  "Comment successfully created." 
+            return redirect_to post_path("#{comment_param[:post_id]}")
 
         else
-            flash.now[:alert] = "Unable to create a comment"
+            flash.now[:error] = comment.errors.full_messages
             render 'new'
 
 
