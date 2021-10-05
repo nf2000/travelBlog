@@ -1,7 +1,6 @@
 class PostsController < ApplicationController
 
     def index
-       
         @posts = Post.all
     end
 
@@ -14,10 +13,10 @@ class PostsController < ApplicationController
     def destroy
         @post = Post.find(params[:id])
             if @post.destroy
-                flash[:notice] =  "'#{@post.title}' successfully deleted."  
-                redirect_to root_path
+                flash[:success] =  "'#{@post.title}' successfully deleted."  
+                redirect_to root_path 
             else
-                flash.now[:alert] = "could not delete blog post"
+                flash.now[:danger] = "could not delete blog post"
                 render 'show'
             end
     end
@@ -32,8 +31,9 @@ class PostsController < ApplicationController
         post_is_valid = post.valid? #checking if the post fields are filled in 
         if post_is_valid  
             post.save # saves the parameters inside the database
-           return redirect_to posts_path
+            return redirect_to posts_path, success: "Post created successfully"
         else
+            flash.now[:danger] = "Post could not be created"
             render 'new'
         end  
        
@@ -47,10 +47,10 @@ class PostsController < ApplicationController
         @post = Post.find(params[:id])
     
         if @post.update(post_param)
-            flash[:notice] =  "'#{@post.title}' successfully updated."  
+            flash[:success] =  "'#{@post.title}' successfully updated."  
             redirect_to root_path
         else
-            flash.now[:alert] = "unable to update blog"
+            flash.now[:danger] = "unable to update blog"
             render 'edit'
         end
       end
