@@ -27,13 +27,7 @@
       <li><%= link_to "Create a Post", new_post_path %> </li>
     </ul> <br>
 
-  <div>
-    <nav class="navbar fixed-bottom navbar-light bg-dark">
-    <nav class = "navbar-brand"> <%=  image_tag "instagram.png", width: 35, height: 35 %> </nav>
-    <nav class = "navbar-brand"> <%=  image_tag "twitter.png", width: 35, height: 35 %> </nav>
-
-
-  </div>
+  
   
     <% flash.each do |type, msg| %>
       <div class="alert alert-info">
