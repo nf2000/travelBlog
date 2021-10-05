@@ -16,12 +16,11 @@ class CommentsController < ApplicationController
         comment_is_valid = comment.valid? 
         if comment_is_valid
             comment.save
-            flash[:notice] =  "Comment successfully created." 
-            return redirect_to post_path("#{comment_param[:post_id]}")
+            #flash[:notice] =  "Comment successfully created." 
+            return redirect_to post_path("#{comment_param[:post_id]}"), success: "Comment successfully created."
 
         else
-            flash.now[:alert] = "Comment can not be made"
-
+            flash.now[:danger] = "comment was not created"
             render 'new'
 
         end  
