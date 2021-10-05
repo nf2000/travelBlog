@@ -8,7 +8,7 @@
 .content{
     text-align: left;
     position: absolute;
-    top: 65%;
+    top: 60%;
     left: 16%;
     right: 20%;
     padding-bottom: 5%;
@@ -25,6 +25,7 @@
     position: absolute;
     top: 90%;
     left: 15%;
+    padding-top: 5%;
  
 }
 .col-sm-8{
