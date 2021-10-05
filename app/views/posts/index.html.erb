@@ -14,13 +14,13 @@
       <tr>                          
         <th>Title</th>
         <th>Author</th>
-        <th> </th>
+        <th> View Blog</th>
       </tr>
       <% @posts.each do |p| %>     
       <tr class = data>
         <td ><%= p.title %></td>  
         <td ><%= p.author %></td> 
-        <td > <%= link_to "View Blog", post_path(p) %></td>
+        <td > <%= link_to "View ", post_path(p) %></td>
  
       </tr>
       <% end %>  
