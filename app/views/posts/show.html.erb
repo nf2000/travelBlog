@@ -2,74 +2,47 @@
   <div class="container">
     
     <div class="specfic-post">
-    <h2 class="display-3"><%= @post.title %> </h2> <br>
-      <div class="info">
-        <p class="lead"> by <%= @post.author %>  </p>
-        <ul class="list-inline">
-          <li class="list-inline-item">Category: <%= @post.category %></li> 
-          <li class="list-inline-item">Created at: <%= @post.created_at%></li>
-        </ul> 
-        </div>
-        <p class="content"><%= @post.content %> </p>
-      </div>
-      <div class="btn1">
-        <%= button_to "Delete", { action: "destroy" }, method: :delete, data:{confirm: 'Are you sure you wish to delete this blog?'}, class: 'btn btn-primary me-md-5 btn btn-primary btn-sm '  %>
-      </div>
-      <div class="edit-btn">
-
-        <li><%= link_to "Edit ", edit_post_path(@post), class: ' btn btn-primary me-md-5 btn btn-primary btn-sm '%></li>
-
-      </div>
-
-        
-      <div class = "comments">
-        <div class="row">
-          <div class="col-sm-10"></div>
-      
-             <% @comments.each do |comment| %>     
-             <p ><%= comment.comment %></p> 
-             <div class="col-6 col-md-4"><p> <%= comment.created_at%></p></div> 
-            <% end %>  
-            <li><%= link_to "Add Comment ", new_comment_path(post_id: @post.id), class: ' btn btn-primary me-md-5 btn btn-primary btn-sm '%></li>
+      <h2 class="display-3"><%= @post.title %> </h2> <br>
+        <div class="info">
+          <p class="lead"> by <%= @post.author %>  </p>
+          <ul class="list-inline">
+            <li class="list-inline-item">Category: <%= @post.category %></li> 
+            <li class="list-inline-item">Created at: <%= @post.created_at%></li>
+          </ul> 
           </div>
+          <p class="content"><%= @post.content %> </p>
         </div>
-      </div>
-  </div>
-</div>
+        <div class="btn1">
+          <%= button_to "Delete", { action: "destroy" }, method: :delete, data:{confirm: 'Are you sure you wish to delete this blog?'}, class: 'btn btn-primary me-md-5 btn btn-primary btn-sm '  %>
+        </div>
+        <div class="edit-btn">
+          <li><%= link_to "Edit ", edit_post_path(@post), class: ' btn btn-primary me-md-5 btn btn-primary btn-sm '%></li>
+        </div>
+    </div>
 
 
     <div class="row d-flex justify-content-center">
-      <div class="col-md-8 col-lg-8">
+      <div class="col-sm-8 col-lg-8">
         <% @comments.each do |comment| %>
-
         <div class="card shadow-0 border" style="background-color: #f0f2f5;">
             <div class="card mb-4">
               <div class="card-body">
-                <p>Type your note, and hit enter to add it</p>
-
                 <div class="d-flex justify-content-between">
                   <div class="d-flex flex-row align-items-center">     
-                    
                     <p class="small text-muted mb-0"><%= comment.comment%></p>
                   </div>
                   <div class="d-flex flex-row align-items-center">
                     <p class="small text-muted mb-0"><%= comment.created_at%></p>
-                    
                   </div>
                 </div>
               </div>
             </div>
-
-        <%end%>
-        <li><%= link_to "Add Comment ", new_comment_path(post_id: @post.id), class: ' btn btn-primary me-md-5 btn btn-primary btn-sm '%></li>
-
-
-      
+            <%end%>
+            <li><%= link_to "Add Comment ", new_comment_path(post_id: @post.id), class: ' btn btn-primary me-md-5 btn btn-primary btn-sm '%></li>
           </div>
         </div>
       </div>
     </div>
-
   </div>
 </div>
 
