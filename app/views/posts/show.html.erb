@@ -28,33 +28,32 @@
       </ul>
     </div>
     </div>
-
     <div class = comment-section>
-      <div class="row d-flex justify-content-center">
-      <div class="position-absolute top-50 start-50"></div>
-          <h3> Comment Section </h3>
-      </div>
-        <div class="col-sm-8 col-lg-8">
-          <% @comments.each do |comment| %>
-          <div class="card shadow-0 border" style="background-color: #f0f2f5;">
-              <div class="card mb-4">
-                <div class="card-body">
-                  <div class="d-flex justify-content-between">
-                    <div class="d-flex flex-row align-items-center">     
-                      <p class="small text-muted mb-0"><%= comment.comment%></p>
-                    </div>
-                    <div class="d-flex flex-row align-items-center">
-                      <p class="small text-muted mb-0"><%= comment.created_at%></p>
+      <div class="row d-flex p-2 justify-content-center">
+        <div class="d-block p-2 bg-dark text-white">
+            <h3> Comment Section </h3>
+        </div>
+          <div class="col-sm-8 col-lg-8">
+            <% @comments.each do |comment| %>
+            <div class="card shadow-0 border" style="background-color: #f0f2f5;">
+                <div class="card mb-4">
+                  <div class="card-body">
+                    <div class="d-flex justify-content-between">
+                      <div class="d-flex flex-row align-items-center">     
+                        <p class="small text-muted mb-0"><%= comment.comment%></p>
+                      </div>
+                      <div class="d-flex flex-row align-items-center">
+                        <p class="small text-muted mb-0"><%= comment.created_at%></p>
+                      </div>
                     </div>
                   </div>
                 </div>
+                <%end%>
               </div>
-              <%end%>
             </div>
           </div>
-        </div>
       </div>
-      </div>
+    </div>
   </div>
 </div>
 
