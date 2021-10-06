@@ -1,33 +1,38 @@
+
+<div id="error_explanation">
+<ul>
+    <% @post.errors.full_messages.each do |error| %>
+       <li> * <%= error %></li> 
+    <% end %>
+</ul>
+</div>
+
 <div class="create">
+
     <div class="container">
-        <div class="error"
-            <% @post.errors.full_messages.each do |error| %>
-                <%= error %>
-            <% end %>
-        <div>
         <%= form_with model: post do |form| %> 
         <div class="row">
             <div class="col-sm-3">
                 <%= form.label :title %>
-                <%= form.text_field :title , class: "form-control form-control-sm"%> <br>
+                <%= form.text_field :title , class: "form-control form-control-sm" %> <br>
             </div>
             <div class="col-sm-3">
                 <%= form.label :author %>
-                <%= form.text_field :author , class: "form-control form-control-sm", :required => true %> <br>  
+                <%= form.text_field :author , class: "form-control form-control-sm" %> <br>  
             </div>
             <div class="col-sm-3">
                 <%= form.label :category %>
-                <%= form.text_field :category , class: "form-control form-control-sm" , :required => true%> <br>
+                <%= form.text_field :category , class: "form-control form-control-sm" %> <br>
             </div>
         </div>
     
             <div class="col-sm-9">
                 <%= form.label :content %>
-                <%= form.text_area :content, class: "form-control form-control-sm", rows: "6", :required => true %> <br> 
+                <%= form.text_area :content, class: "form-control form-control-sm", rows: "6" %> <br> 
             </div> 
         
             <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                <%= form.submit "Create", class: " btn btn-primary me-md-5 btn btn-secondary btn-sm" %>
+                <%= form.submit "Update", class: " btn btn-primary me-md-5 btn btn-secondary btn-sm" %>
             </div>
         <% end %> 
     </div>
