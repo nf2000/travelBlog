@@ -36,9 +36,12 @@
           <div class="col-sm-8 col-lg-8">
             <% @comments.each do |comment| %>
             <div class="card shadow-0 border" style="background-color: #f0f2f5;">
-                <div class="card mb-4">
+                <div class="card mb-2">
                   <div class="card-body">
                     <div class="d-flex justify-content-between">
+                      <div class="d-flex flex-row align-items-center">
+                        <p class="small text-muted mb-0"><%= comment.name%></p>
+                      </div>
                       <div class="d-flex flex-row align-items-center">     
                         <p class="small text-muted mb-0"><%= comment.comment%></p>
                       </div>
