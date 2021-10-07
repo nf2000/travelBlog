@@ -1,9 +1,9 @@
 <div id="error_explanation">
-<ul>
-    <% @post.errors.full_messages.each do |error| %>
-       <li> * <%= error %></li> 
-    <% end %>
-</ul>
+    <ul>
+        <% @post.errors.full_messages.each do |error| %>
+            <li> * <%= error %></li> 
+        <% end %>
+    </ul>
 </div>
 
 <div class="create">
@@ -24,14 +24,14 @@
                 <%= form.text_field :category , class: "form-control form-control-sm" %> <br>
             </div>
         </div>
-            <div class="col-sm-9">
-                <%= form.label :content %>
-                <%= form.text_area :content, class: "form-control form-control-sm", rows: "6" %> <br> 
-            </div> 
-        
-            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                <%= form.submit "Update", class: " btn btn-primary me-md-5 btn btn-secondary btn-sm" %>
-            </div>
+        <div class="col-sm-9">
+            <%= form.label :content %>
+            <%= form.text_area :content, class: "form-control form-control-sm", rows: "6" %> <br> 
+        </div> 
+    
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+            <%= form.submit "Update", class: " btn btn-primary me-md-5 btn btn-secondary btn-sm" %>
+        </div>
         <% end %> 
     </div>
 </div>

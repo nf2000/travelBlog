@@ -18,8 +18,6 @@
 
 
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-
-
   </head>
 
   <body>
@@ -28,8 +26,6 @@
       <li> <%= link_to "Home", posts_path %> </li>
       <li><%= link_to "Create a Post", new_post_path %> </li>
     </ul> <br>
-
-  
   
     <% flash.each do |name, msg| %>
       <div class="alert alert-<%= name%>">
@@ -37,7 +33,7 @@
       </div>
     <% end %>
 
-   
   <%=yield%>
+
   </body>
 </html>

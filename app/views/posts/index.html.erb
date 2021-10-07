@@ -17,12 +17,11 @@
         <th> View Blog</th>
       </tr>
       <% @posts.each do |p| %>     
-      <tr class = data>
-        <td ><%= p.title %></td>  
-        <td ><%= p.author %></td> 
-        <td > <%= link_to "View ", post_path(p) %></td>
- 
-      </tr>
+        <tr class = data>
+          <td ><%= p.title %></td>  
+          <td ><%= p.author %></td> 
+          <td > <%= link_to "View ", post_path(p) %></td>
+        </tr>
       <% end %>  
       
     </table>
