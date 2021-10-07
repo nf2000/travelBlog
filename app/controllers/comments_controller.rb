@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
     before_action :find_post
+
     def index
         @comments = Comment.all
     end
@@ -7,7 +8,6 @@ class CommentsController < ApplicationController
     def new
         @comment = Comment.new
     end
-
   
     def create
         @comment = Comment.new(comment_param)  
