@@ -15,7 +15,6 @@ class CommentsController < ApplicationController
         comment_is_valid = @comment.valid? 
         if comment_is_valid
             @comment.save
-            #flash[:notice] =  "Comment successfully created." 
             return redirect_to post_path("#{@comment.post_id}"), success: "Comment successfully created."
 
         else
@@ -28,7 +27,7 @@ class CommentsController < ApplicationController
 
     private
     def comment_param
-    params.require(:comment).permit(:comment,:name,:post_id)
+        params.require(:comment).permit(:comment,:name,:post_id)
     end
 
     private 
