@@ -21,7 +21,7 @@
       </button>
       <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" >
         <div class="d-grid gap-3 col-8 ">
-        <a class="dropdown-item"><%= link_to""Delete", post_path(@post), method: :delete, data:{confirm: 'Are you sure you wish to delete this blog?'}, class: 'btn btn-dark btn-sm ' %></a>
+        <a class="dropdown-item"><%= link_to"Delete", post_path(@post), method: :delete, data:{confirm: 'Are you sure you wish to delete this blog?'}, class: 'btn btn-dark btn-sm ' %></a>
         <a class="dropdown-item"><%= link_to "Edit", edit_post_path(@post), class: 'btn btn-dark btn-sm '%></a>
         <a class="dropdown-item"><%= link_to "Add Comment", new_post_comment_path(@post), class: 'btn btn-dark btn-sm '%></a>
         </div>
@@ -40,10 +40,10 @@
                   <div class="card-body">
                     <div class="d-flex justify-content-between">
                       <div class="d-flex flex-row align-items-center">
-                        <p class="small text-muted mb-0"><%= comment.name%></p>
+                        <p class="small text-muted mb-0"><%= comment.name%>:</p>
                       </div>
                       <div class="d-flex flex-row align-items-center">     
-                        <p class="small text-muted mb-0"><%= comment.comment%></p>
+                        <p class="small text-muted mb-0">"<%= comment.comment%> "</p>
                       </div>
                       <div class="d-flex flex-row align-items-center">
                         <p class="small text-muted mb-0"><%= comment.created_at%></p>
