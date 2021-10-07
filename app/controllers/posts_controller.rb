@@ -41,11 +41,11 @@ class PostsController < ApplicationController
 
     def edit
         @post = Post.find(params[:id])
-      end
+    end
     
-      def update
+    def update
         @post = Post.find(params[:id])
-    
+
         if @post.update(post_param)
             flash[:success] =  "'#{@post.title}' successfully updated."  
             redirect_to root_path
@@ -53,11 +53,11 @@ class PostsController < ApplicationController
             flash.now[:danger] = "unable to update blog"
             render 'edit'
         end
-      end
+    end
 
   
     private
     def post_param
-    params.require(:post).permit(:title, :author, :category, :content)
+        params.require(:post).permit(:title, :author, :category, :content)
     end
 end
