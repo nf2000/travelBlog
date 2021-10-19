@@ -7,18 +7,17 @@ class PostsController < ApplicationController
     def show
         @post = Post.find(params[:id])
         @comments = @post.comments
-
     end 
 
     def destroy
         @post = Post.find(params[:id])
-            if @post.destroy
-                flash[:success] =  "'#{@post.title}' successfully deleted."  
-                redirect_to root_path 
-            else
-                flash.now[:danger] = "could not delete blog post"
-                render 'show'
-            end
+        if @post.destroy
+            flash[:success] =  "'#{@post.title}' successfully deleted."  
+            redirect_to root_path 
+        else
+            flash.now[:danger] = "could not delete blog post"
+            render 'show'
+        end
     end
 
     def new
@@ -36,7 +35,6 @@ class PostsController < ApplicationController
             flash.now[:danger] = "Post could not be created"
             render 'new'
         end  
-       
     end
 
     def edit
@@ -55,7 +53,6 @@ class PostsController < ApplicationController
         end
     end
 
-  
     private
     def post_param
         params.require(:post).permit(:title, :author, :category, :content)
