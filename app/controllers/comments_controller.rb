@@ -16,13 +16,10 @@ class CommentsController < ApplicationController
         if comment_is_valid
             @comment.save
             return redirect_to post_path("#{@comment.post_id}"), success: "Comment successfully created."
-
         else
             flash.now[:danger] = "comment was not created"
             render 'new'
-
         end  
-       
     end
 
     private
