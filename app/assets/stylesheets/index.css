@@ -1,5 +1,3 @@
-
-
 h2{
     
     padding-bottom: 100px;
@@ -15,16 +13,14 @@ h2{
 
 }
 
-
 .posts {
     display: grid;
     grid-template-columns: repeat(3, 80px);
     grid-template-rows: repeat(2, 50px);
     gap: 10px;
    
-  }
+}
 
- 
 .author{
     display: inline;
 }
@@ -33,7 +29,6 @@ body {
     background-color: black;
     color: white;
 }
-
 
 .table table-dark table-striped table-hover{
 
@@ -48,6 +43,7 @@ body {
     margin-right: auto;
 
 }
+
 .d-grid{
     float: right;
     position: relative;
