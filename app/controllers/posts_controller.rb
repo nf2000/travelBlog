@@ -29,6 +29,7 @@ class PostsController < ApplicationController
         @post = Post.new(post_param)  #using the @ means the variable can be used in the view. A new instances post is created 
         post_is_valid = @post.valid? #checking if the post fields are filled in 
         if post_is_valid  
+
             @post.save # saves the parameters inside the database
             return redirect_to posts_path, success: "Post created successfully"
         else
