@@ -2,7 +2,7 @@
 <div class = container-pos>
   <div id = header>
     <h2 class="text-right" > Travel Blog </h2>
-    <p> This blog is your guide on the cool places that exist in the world </p>
+    <p class ="tagline"> This blog is your guide on the cool places that exist in the world </p>
   </div>
 
 
@@ -14,15 +14,14 @@
       <tr>                          
         <th>Title</th>
         <th>Author</th>
-        <th> </th>
+        <th> View Blog</th>
       </tr>
       <% @posts.each do |p| %>     
-      <tr class = data>
-        <td ><%= p.title %></td>  
-        <td ><%= p.author %></td> 
-        <td > <%= link_to "View Blog", post_path(p) %></td>
- 
-      </tr>
+        <tr class = data>
+          <td ><%= p.title %></td>  
+          <td ><%= p.author %></td> 
+          <td > <%= link_to "View ", post_path(p) %></td>
+        </tr>
       <% end %>  
       
     </table>

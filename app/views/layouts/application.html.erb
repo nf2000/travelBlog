@@ -7,6 +7,8 @@
     <%= csp_meta_tag %>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
     <link href='http://fonts.googleapis.com/css?family=Merriweather:300italic,300' rel='stylesheet' type='text/css'>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
+
 
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -16,8 +18,6 @@
 
 
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-
-
   </head>
 
   <body>
@@ -26,21 +26,14 @@
       <li> <%= link_to "Home", posts_path %> </li>
       <li><%= link_to "Create a Post", new_post_path %> </li>
     </ul> <br>
-
-  <div>
-    <nav class="navbar fixed-bottom navbar-light bg-dark">
-    <nav class = "navbar-brand"> <%=  image_tag "instagram.png", width: 35, height: 35 %> </nav>
-    <nav class = "navbar-brand"> <%=  image_tag "twitter.png", width: 35, height: 35 %> </nav>
-
-
-  </div>
   
-    <% flash.each do |type, msg| %>
-      <div class="alert alert-info">
+    <% flash.each do |name, msg| %>
+      <div class="alert alert-<%= name%>">
         <%= msg %>
       </div>
-
     <% end %>
+
   <%=yield%>
+
   </body>
 </html>

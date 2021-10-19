@@ -1,0 +1,36 @@
+
+<div class="header">
+  <h2 >Create a comment</h2>
+</div>
+
+<div id="error_explanation">
+  <ul>
+      <% @comment.errors.full_messages.each do |error| %>
+        <li> * <%= error %></li> 
+      <% end %>
+  </ul>
+</div>
+
+<div class="create">
+  <div class="container">
+    <%= form_with model: [ @post, @comment], url: post_comments_path, method: "post" do |form| %> 
+      <div class="row g-2">
+        <div class="col-md-6"
+          <div class="mb-3">
+            <%= form.label :Name %>
+            <%= form.text_field :name, class: "form-control form-control-sm" %> <br> 
+            <%= form.label :Comment %>
+            <%= form.text_area :comment, class: "form-control form-control-sm", rows: "6" %> <br> 
+          </div>
+        </div> 
+        <div class= "col-sm-9 ms-auto text-center" ">
+          <%= form.submit "Submit", class: " btn btn-secondary btn-sm" %>
+        </div>
+      </div>
+    <% end %> 
+  </div>
+</div>
+        
+
+
+ 
